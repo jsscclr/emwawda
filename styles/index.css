@@ -252,3 +252,32 @@ meter {
 [id=smartphone-distribution] strong {
     font-size: 4em;
 }
+
+/* Jobs Quote */
+[data-author=jobs] em {
+    font-style: normal;
+    font-weight: inherit;
+}
+
+[id=uni] {
+    color: transparent;
+    position: relative;
+    transition: color 1s 5s;
+}
+
+[id=uni]::after {
+    color: var(--dark-color);
+    content: ' bi';
+    position: absolute;
+    opacity: 1;
+    right: 0;
+    transition: inherit;
+}
+
+.visible [id=uni] {
+    color: inherit;
+}
+
+.visible [id=uni]::after {
+    color: transparent;
+}
