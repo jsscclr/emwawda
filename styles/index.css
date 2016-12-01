@@ -47,6 +47,8 @@ h1 {
     font-size: 3.5em;
 }
 
+
+
 .function {
     color: var(--violet);
 }
@@ -62,7 +64,9 @@ h1 {
 .support {
     display: flex;
 }
-
+cite {
+    font-weight: 300; align-self: flex-end;
+}
 pre {
     color: white;
     padding: 1em;
@@ -89,14 +93,6 @@ code {
     color: rgb(255, 255, 255);
     font-family: 'Fira Code';
     font-weight: 800;
-}
-
-.no-support {
-    opacity: 0.5;
-}
-
-.some-support {
-    opacity: 0.9;
 }
 
 .red {
@@ -212,7 +208,6 @@ cite {
     position: absolute;
     right: 0;
     transform: scale(20) translateY(20%) translateX(-15%);
-    opacity: 0.9;
     mix-blend-mode: exclusion;
 }
 
@@ -270,23 +265,49 @@ meter {
 }
 
 /* Slide 3 */
-[id=smartphone-distribution] div {
+[id='smartphone-distribution'] {
+    background: orange;
+}
+
+[id='smartphone-distribution'] div {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 
-[id=smartphone-distribution] figure {
+[id='smartphone-distribution'] figure {
     flex-basis: 50%;
-    text-align: center;
+    text-align: right;
+    transform: translateX(-9em) translateY(1em);
+    opacity: 0;
+    transition: 0.5s;
 }
 
-[id=smartphone-distribution] strong {
+[id='smartphone-distribution'] strong {
     font-size: 4em;
+    color: cornflowerblue;
 }
+
+[id='smartphone-distribution'] figcaption {
+    text-transform: lowercase;
+    font-size: 2em;
+    transform: translateY(-1.5em) translateX(1em);
+    mix-blend-mode: exclusion;
+    color: white;
+}
+
+[id='smartphone-distribution'] cite {
+    color: white;
+}
+
+[id='smartphone-distribution'].visible figure {
+    opacity: 1;
+}
+
 
 /* Jobs Quote */
 [data-author=jobs] em {
@@ -326,15 +347,16 @@ meter {
 [data-example=election] > div {
     animation: 0.1s 2s 10 vibrate paused;
     animation-delay: 5s;
+    mix-blend-mode: exclusion;
 }
 
 [data-example=election] h2 {
     text-transform: uppercase;
-    transform: translateY(-2em);
-    font-size: 3em;
-    mix-blend-mode: color-burn;
+    transform: translateY(-1.25em);
+    font-size: 4.5em;
     opacity: 0;
     transition: opacity 0.2s 5s;
+    z-index: -1;
 }
 
 [data-example=election].visible h2 {
@@ -352,6 +374,7 @@ meter {
     height: 200px;
     display: inline-block;
     animation: move steps(5) 2s 10 paused;
+    z-index: 1;
 }
 
 .visible .person,

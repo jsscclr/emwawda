@@ -9,7 +9,7 @@
   <body>
     <section class="slide">
       <h1>Enhancing Mobile Web Applications with Device APIs</h1>
-      <cite style="font-weight: 300; align-self: flex-end;">@jsscclr</cite>
+      <cite>@jsscclr</cite>
     </section>
     <section data-author="jenson" class="quote slide">
       <figure>
@@ -21,12 +21,44 @@
 	<figcaption>Scott Jenson</figcaption>
       </figure>
     </section>
+    <section id="smartphone-distribution" class="slide">
+      <div>
+	<figure style="transition-delay: 1s;">
+	  <strong>35%</strong>
+	  <figcaption>Social</figcaption>
+	</figure>
+	<figure style="transition-delay: 2s;">
+	  <strong>16%</strong>
+	  <figcaption>Entertainment</figcaption>
+	</figure>
+	<figure style="transition-delay: 3s;">
+	  <strong>12%</strong>
+	  <figcaption>Gaming</figcaption>
+	</figure>
+	<figure style="transition-delay: 4s;">
+	  <strong>04%</strong>
+	  <figcaption>Productivity</figcaption>
+	</figure>
+	<figure style="transition-delay: 5s;">
+	  <strong>03%</strong>
+	  <figcaption>Search</figcaption>
+	</figure>
+      </div>
+      <cite>The Nielsen Company, 2015</cite>
+    </section>
     <section class="slide">
       <h1>
 	<span class="faded">Enhancing </span>
 	<em>Mobile Web Applications</em>
 	<span class="faded">with Device APIs</span>
       </h1>
+    </section>
+    <section data-example="election" class="slide">
+      <div>
+	<div class="person" id="hilary"></div>
+	<div class="person" id="trump"></div>
+      </div>
+      <h2>Vibration API</h2>
     </section>
     <section id="input" class="slide">
       <h2>Reconsider input</h2>
@@ -42,13 +74,6 @@
 	<figcaption>Steve Jobs</figcaption>
       </figure>
     </section>
-    <section data-example="election" class="slide">
-      <div>
-	<div class="person" id="hilary"></div>
-	<div class="person" id="trump"></div>
-      </div>
-      <h2>Vibration API</h2>
-    </section>
     <section data-author="akpem" class="quote slide">
       <figure>
 	<blockquote>
@@ -61,7 +86,7 @@
     </section>
     <script>
      var observer = new IntersectionObserver(callback, {threshold: 1.0});
-     var slides = document.querySelectorAll(".slide");
+    var slides = document.querySelectorAll(".slide");
 
      for (let slide of slides) {
        observer.observe(slide);
