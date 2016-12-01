@@ -262,7 +262,7 @@ meter {
 [id=uni] {
     color: transparent;
     position: relative;
-    transition: color 1s 5s;
+    transition: color 1s 3s;
 }
 
 [id=uni]::after {
@@ -280,4 +280,64 @@ meter {
 
 .visible [id=uni]::after {
     color: transparent;
+}
+
+/* Election Example */
+[data-example=election] {
+    align-items: center;
+    justify-content: center;
+}
+
+[data-example=election] > div {
+    animation: 0.1s 2s 10 vibrate paused;
+    animation-delay: 5s;
+}
+
+[data-example=election] h2 {
+    text-transform: uppercase;
+    transform: translateY(-2em);
+    font-size: 3em;
+    mix-blend-mode: color-burn;
+    opacity: 0;
+    transition: opacity 0.2s 5s;
+}
+
+[data-example=election].visible h2 {
+    opacity: 1;
+}
+
+@keyframes vibrate {
+  50% { transform: rotate(1deg) translateX(1px); }
+  100% { transform: rotate(-1deg) translateX(-1px);}
+}
+
+.person {
+    width: calc(768px / 6);
+    overflow: hidden;
+    height: 200px;
+    display: inline-block;
+    animation: move steps(5) 2s 10 paused;
+}
+
+.visible .person,
+[data-example=election].visible div {
+    animation-play-state: running;
+}
+
+@keyframes move {
+    to {
+	background-position: calc(728px / 6 * 5);
+    }
+}
+
+
+
+[id=hilary] {
+    background: url(https://interactive.guim.co.uk/thrashers/us_election_front/hashed/clinton.99208c97.png) 0 / 728px 100%;
+}
+
+[id=trump] {
+    background: url(https://interactive.guim.co.uk/thrashers/us_election_front/hashed/trump.93a36b22.png) 0 / 728px 100%;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
 }
