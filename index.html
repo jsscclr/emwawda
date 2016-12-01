@@ -9,6 +9,17 @@
   <body>
     <section class="slide">
       <h1>Enhancing Mobile Web Applications with Device APIs</h1>
+      <cite style="font-weight: 300; align-self: flex-end;">@jsscclr</cite>
+    </section>
+    <section data-author="jenson" class="quote slide">
+      <figure>
+	<blockquote>
+	  <span>There is something</span>
+	  <span>deeply inadequate</span>
+	  <span>about mobile.</span>
+	</blockquote>
+	<figcaption>Scott Jenson</figcaption>
+      </figure>
     </section>
     <section class="slide">
       <h1>
@@ -17,11 +28,19 @@
 	<span class="faded">with Device APIs</span>
       </h1>
     </section>
-    <section class="quote slide">
-      <figure>
-	<blockquote>There is something deeply inadequate about mobile.</blockquote>
-	<figcaption>Scott Jenson</figcaption>
-      </figure>
-    </section>
+    <script>
+     var observer = new IntersectionObserver(callback, {threshold: 1.0});
+     var slides = document.querySelectorAll(".slide");
+
+     for (let slide of slides) {
+       observer.observe(slide);
+     }
+
+     function callback(entries) {
+       entries.forEach((entry) => {
+         entry.target.classList.add("visible");
+       })
+     }
+    </script>
   </body>
 </html>
