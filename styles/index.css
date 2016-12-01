@@ -8,12 +8,6 @@ ul {
     list-style-type: none;
 }
 
-li::before {
-    content: "-";
-    display: inline-block;
-    width: 2em;
-}
-
 :root {
     --light-color: rgb(245, 250, 255);
     --dark-color: #212529;
@@ -26,6 +20,15 @@ li::before {
     --error: #e03131;
     --variable: #99e9f2;
     --violet: #b197fc;
+
+    /* Open Color */
+    --grape-5: #cc5de8;
+    --violet-5: #845ef7;
+    --indigo-5: #5c7cfa;
+    --blue-5: #329af0;
+    --cyan-5: #22b8cf;
+    --teal-5: #20c997;
+    --green-5: #51cf66;
 
     /* Timings */
     --dramatic: 2s;
@@ -188,6 +191,10 @@ var {
     color: #1862ab;
 }
 
+cite {
+    align-self: flex-end;
+}
+
 .quote figcaption {
     text-align: right;
     position: relative;
@@ -208,9 +215,40 @@ var {
     opacity: 0.4;
 }
 
-
 @media all and (display-mode: fullscreen) {
     body {
 	cursor: none;
     }
+}
+
+meter {
+    background: transparent;
+    display: block;
+}
+
+.visible meter {
+    width: 100%;
+}
+
+::-moz-meter-bar {
+    background: var(--green-5);
+}
+
+/* Slide 3 */
+[id=smartphone-distribution] div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+[id=smartphone-distribution] figure {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+[id=smartphone-distribution] strong {
+    font-size: 4em;
 }
